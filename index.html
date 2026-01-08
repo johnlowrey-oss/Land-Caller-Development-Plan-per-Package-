@@ -41,7 +41,7 @@
                     </div>
                     <div>
                         <span class="font-bold text-lg tracking-tight">Land Caller</span>
-                        <span class="text-xs text-slate-400 font-mono ml-2">v1.4.0 SPECIFICATION</span>
+                        <span class="text-xs text-slate-400 font-mono ml-2">v1.5.0 SPECIFICATION</span>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6 text-sm font-medium">
@@ -555,8 +555,15 @@
                         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 font-bold border border-red-200">3</div>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-slate-900">Cancelled / Inactive</h3>
-                        <p class="text-sm text-slate-600">Client cancels subscription or fails to pay Maintenance Fee.</p>
+                        <h3 class="text-lg font-bold text-slate-900">Cancelled / Inactive / Frozen</h3>
+                        <p class="text-sm text-slate-600">Client cancels subscription, fails to pay Maintenance Fee, or fails to pay Contract Bill.</p>
+                        
+                        <!-- Enterprise Payment Failure Logic -->
+                        <div class="mt-3 text-xs bg-red-50 border border-red-200 p-2 rounded mb-2">
+                             <strong class="text-red-700">Contract Payment Failure (Enterprise):</strong><br>
+                             If a monthly bill fails, the client is given a <strong>7-day grace period</strong> to update payment. After 7 days, the account is automatically frozen (CRM Access Revoked).
+                        </div>
+
                          <div class="mt-2 text-sm text-slate-700 border-l-4 border-red-400 pl-3">
                             <strong>Action:</strong> CRM Access is revoked (Shut Off).
                             <br><strong>Data Policy:</strong> Data is retained in GHL sub-account (frozen), but user cannot login. Allows for future reactivation.
